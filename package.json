@@ -1,0 +1,16 @@
+{
+  "name": "telegram-github-issue-creator-bot",
+  "version": "1.0.0",
+  "description": "Telegram Github Issue Creator Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "github-api": "^3.3.0",
+    "node-telegram-bot-api": "^0.50.0"
+  }
+}
