@@ -1,4 +1,4 @@
-const github = require("github-api");
+const github = require('github-api');
 
 const Github = (token, user, repository) => {
     const gh = new github({
@@ -20,7 +20,8 @@ const Github = (token, user, repository) => {
 
                 repo.createIssue({
                     title,
-                    body
+                    body,
+                    labels: ['bug']
                 }, (data) => {
                     resolve(data)
                 });
