@@ -5,9 +5,11 @@ const getTextFromMessage = (identifier, splittedMsg = []) => {
   return text;
 };
 
-const issueParser = (msgData) => {
+const isIssue = (msg) => msg.text.indexOf('/issue') > -1
+
+const parse = (msgData) => {
   const msg = msgData.text;
-  const msgArr = msg.split("\n");
+  const msgArr = msg.replace('/issue ', '').split("\n");
 
   const date = getTextFromMessage("Date", msgArr);
   const userId = getTextFromMessage("User ID", msgArr);
@@ -28,4 +30,7 @@ const issueParser = (msgData) => {
   };
 };
 
-module.exports = issueParser;
+module.exports = {
+  isIssue,
+  parse
+};
