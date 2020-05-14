@@ -11,13 +11,16 @@ const Github = (token, user, repository) => {
         title += `User id: ${issueData.userId}, `
         title += `Ride id: ${issueData.rideId || "-"}`
 
+        let body = `${issueData.description} `
+        body += `- Reporter ${issueData.from.firstName} ${issueData.from.lastName}`
+
         return new Promise((resolve, reject) => {
             try {
                 const repo = gh.getIssues(user, repository);
 
                 repo.createIssue({
                     title,
-                    body: issueData.description
+                    body
                 }, (data) => {
                     resolve(data)
                 });
